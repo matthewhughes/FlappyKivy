@@ -1,0 +1,33 @@
+#:kivy 1.8.0
+
+<Obstacle>
+	canvas:
+		Rectangle:
+            pos: self.x, self.gap
+            size: 70, self.height - self.gap
+        Rectangle:
+            pos: self.x, 0
+            size: 70, self.gap - self.gap_height	
+            
+<Player>
+	size: 50, 50
+	canvas:
+		Color: 
+		
+            rgba: 137, 255.0, 255.0, 0.4
+		Ellipse:
+			size: 50, 50
+        	pos: root.pos
+<JumpGame>
+	player: player
+	
+	Label:
+        font_size: 90
+        text: str(root.points)	
+        color: 0, 0, 255, 0.9
+
+	Player:
+		id: player
+		center_x: root.center_x
+        center_y: root.center_y
+        
